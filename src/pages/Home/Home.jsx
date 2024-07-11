@@ -62,7 +62,13 @@ const Home = () => {
         className="w-[40%] max-h-3/4 bg-white rounded-md mx-auto overflow-hidden mt-14 p-5"
       >
         {/* start of Edit Notes */}
-        <AddEditNotes />
+        <AddEditNotes
+          type={openAddEditModal.type}
+          noteData={openAddEditModal.data}
+          onClose={() => {
+            setOpenAddEditModal({ isShown: false, type: "add", data: null });
+          }}
+        />
         {/* End of Edit Notes */}
       </Modal>
       {/* end of a Modal */}
